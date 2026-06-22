@@ -1,8 +1,14 @@
+from core.parser import Parser
+
+parser = Parser()
+
 while True:
     user_input = input("You > ")
 
-    if user_input.lower() == "exit":
-        print("Jarvis > Goodbye sir.")
-        break
+    result = parser.parse(user_input)
 
-    print("Jarvis > I heard:", user_input)
+    print(result)
+
+    if result["intent"] == "exit":
+        print("Goodbye sir!")
+        break
