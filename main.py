@@ -1,11 +1,14 @@
 from core.parser import Parser
 from core.executor import Executor
+from core.logger import Logger
 
 parser = Parser()
 executor = Executor()
+logger = Logger()
 
 while True:
     user_input = input("You > ")
+    logger.log(user_input)
 
     result = parser.parse(user_input)
 

@@ -30,6 +30,10 @@ class Parser:
                 "intent": "play_music",
                 "target": " ".join(words[1:])
             }
+        elif action == "time":
+            return {
+                "intent": "get_time"
+            }
         else:
             return {
                 "intent": "unknown"
