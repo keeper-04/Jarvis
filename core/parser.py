@@ -34,6 +34,38 @@ class Parser:
             return {
                 "intent": "get_time"
             }
+        elif action == "remember":
+            if len(words) < 3:
+                return {
+                    "intent": "unknown"
+                }
+            key = words[1]
+            value = " ".join(words[2:])
+            return {
+                "intent": "remember",
+                "key": key,
+                "value": value
+            }
+        elif action == "recall":
+            if len(words) < 2:
+                return {
+                    "intent": "unknown"
+                }
+            key = words[1]
+            return {
+                "intent": "recall",
+                "key": key
+            }
+        elif action == "forget":
+            if len(words) < 2:
+                return {
+                    "intent": "unknown"
+                }
+            key = words[1]
+            return {
+                "intent": "forget",
+                "key": key
+            }
         else:
             return {
                 "intent": "unknown"
